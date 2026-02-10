@@ -7,8 +7,8 @@ import ContactSection from "@/components/ContactSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "TechKoodaram | Grassroots Tech Community in South Tamil Nadu",
-    description: "Welcome to TechKoodaram, a grassroots tech community for developers, students, and tech enthusiasts in South Tamil Nadu. Learn, Build, and Share with us.",
+    title: "techKoodaram | Grassroots Tech Community in South Tamil Nadu",
+    description: "Welcome to techKoodaram, a grassroots tech community for developers, students, and tech enthusiasts in South Tamil Nadu. Learn, Build, and Share with us.",
     alternates: {
         canonical: "https://www.techkoodaram.in/",
     },

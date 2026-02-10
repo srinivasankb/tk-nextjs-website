@@ -1,4 +1,4 @@
-# TechKoodaram Website (Next.js Migration)
+# techKoodaram Website (Next.js Migration)
 
 This project has been migrated from Vite to Next.js 14.
 

@@ -21,7 +21,7 @@ const Header = () => {
   }, []);
 
   const navItems: { label: string; href: string }[] = [
-    { label: "Blogs", href: "/blog" },
+    { label: "Blog", href: "/blog" },
     { label: "Community", href: "/#community" },
     // { label: "About", href: "/#about" },
     // { label: "Gatherings", href: "/#gatherings" },
