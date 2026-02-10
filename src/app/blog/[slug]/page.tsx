@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
   try {
     const post = getPostBySlug(params.slug);
     return {
-      title: `${post.title} | TechKoodaram`,
+      title: `${post.title} | techKoodaram`,
       description: post.description,
       alternates: {
         canonical: `/blog/${params.slug}`,
@@ -78,7 +78,7 @@ export default async function BlogPost({ params }: PageProps) {
               },
               publisher: {
                 "@type": "Organization",
-                name: "TechKoodaram",
+                name: "techKoodaram",
                 logo: {
                   "@type": "ImageObject",
                   url: "https://techkoodaram.in/logo.png",

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata = {
-    title: 'Blog | TechKoodaram',
-    description: 'Updates, tutorials, and stories from the TechKoodaram community.',
+    title: 'Blog | techKoodaram',
+    description: 'Updates, tutorials, and stories from the techKoodaram community.',
     alternates: {
         canonical: '/blog',
     },
@@ -15,7 +15,7 @@ export default function BlogIndex() {
     return (
         <div className="container mx-auto px-4 py-12 max-w-4xl">
             <div className='py-12 mt-4'>
-                <h1 className="text-4xl font-bold mb-8">techKoodaram Blogs</h1>
+                <h1 className="text-4xl font-bold mb-8">techKoodaram Blog</h1>
                 <div className="grid gap-8">
                     {posts.map((post) => (
                         <article key={post.slug} className="border p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">

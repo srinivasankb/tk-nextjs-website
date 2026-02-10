@@ -20,14 +20,14 @@ const roboto = Roboto({
 export const metadata = {
     metadataBase: new URL("https://www.techkoodaram.in"),
     title: {
-        default: "TechKoodaram | Grassroots Tech Community in South Tamil Nadu",
-        template: "%s | TechKoodaram",
+        default: "techKoodaram | Grassroots Tech Community in South Tamil Nadu",
+        template: "%s | techKoodaram",
     },
-    description: "TechKoodaram is a grassroots tech community bridging the gap between talent and access. Based in South Tamil Nadu (Sivakasi to Tenkasi), we focus on Learning, Building, and Sharing.",
-    keywords: ["TechKoodaram", "Tamil Nadu Tech Community", "Sivakasi Tech", "Tenkasi Tech", "Developer Community India", "Grassroots Tech", "Open Source Tamil Nadu", "Tech Events Tamil Nadu"],
-    authors: [{ name: "TechKoodaram Team" }],
-    creator: "TechKoodaram",
-    publisher: "TechKoodaram",
+    description: "techKoodaram is a grassroots tech community bridging the gap between talent and access. Based in South Tamil Nadu (Sivakasi to Tenkasi), we focus on Learning, Building, and Sharing.",
+    keywords: ["techKoodaram", "Tamil Nadu Tech Community", "Sivakasi Tech", "Tenkasi Tech", "Developer Community India", "Grassroots Tech", "Open Source Tamil Nadu", "Tech Events Tamil Nadu"],
+    authors: [{ name: "techKoodaram Team" }],
+    creator: "techKoodaram",
+    publisher: "techKoodaram",
     formatDetection: {
         email: false,
         address: false,
@@ -37,16 +37,16 @@ export const metadata = {
         canonical: "/",
     },
     openGraph: {
-        title: "TechKoodaram | Grassroots Tech Community",
+        title: "techKoodaram | Grassroots Tech Community",
         description: "Talent exists everywhere. Access doesn’t. Join the grassroots tech community of South Tamil Nadu.",
         url: "https://techkoodaram.in",
-        siteName: "TechKoodaram",
+        siteName: "techKoodaram",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "TechKoodaram Community",
+                alt: "techKoodaram Community",
             },
         ],
         locale: "en_IN",
@@ -54,7 +54,7 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "TechKoodaram | Grassroots Tech Community",
+        title: "techKoodaram | Grassroots Tech Community",
         description: "Bridging the gap between talent and access in South Tamil Nadu.",
         images: ["/og-image.png"],
     },
@@ -97,7 +97,7 @@ export default function RootLayout({
                         {
                             "@context": "https://schema.org",
                             "@type": "Organization",
-                            name: "TechKoodaram",
+                            name: "techKoodaram",
                             url: "https://techkoodaram.in",
                             logo: "https://techkoodaram.in/logo.png",
                             sameAs: [
@@ -108,7 +108,7 @@ export default function RootLayout({
                         {
                             "@context": "https://schema.org",
                             "@type": "WebSite",
-                            name: "TechKoodaram",
+                            name: "techKoodaram",
                             url: "https://techkoodaram.in",
                             potentialAction: {
                                 "@type": "SearchAction",
