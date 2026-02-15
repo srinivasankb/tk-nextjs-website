@@ -30,7 +30,7 @@ const RegistrationBanner = () => {
                         </span>
                     </div>
                     <Link
-                        href="https://luma.com/1yya2gu8?utm_source=website"
+                        href="https://www.theticket9.com/event/techkoodaram-build-day"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="animate-attention-pulse text-white px-4 py-1.5 rounded-full font-bold transition-all whitespace-nowrap shadow-sm hover:scale-105 active:scale-95"
