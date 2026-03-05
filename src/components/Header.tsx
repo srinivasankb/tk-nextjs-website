@@ -21,6 +21,7 @@ const Header = () => {
   }, []);
 
   const navItems: { label: string; href: string }[] = [
+    { label: "Build Day", href: "/techkoodaram-build-day" },
     { label: "Blog", href: "/blog" },
     { label: "Community", href: "/#community" },
     // { label: "About", href: "/#about" },
