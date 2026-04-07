@@ -117,12 +117,13 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
 
         {post.coverImage ? (
-          <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg my-10 shadow-lg">
+          <div className="relative w-full overflow-hidden rounded-lg my-10 shadow-lg">
             <Image
               src={post.coverImage}
               alt={post.title}
-              fill
-              className="object-cover"
+              width={720}
+              height={0}
+              className="w-full h-auto"
               sizes="(max-width: 768px) 100vw, 768px"
               priority
             />
