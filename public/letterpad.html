@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>techKoodaram – Letterpad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ──────────────────────────────────────────────
+       Brand Tokens
+    ────────────────────────────────────────────── */
+    :root {
+      --brand-dark: #252220;
+      /* near-black charcoal  */
+      --brand-gold: #9a6f2e;
+      /* golden-brown "K"     */
+      --brand-gold-lt: #c49040;
+      /* lighter gold accent  */
+      --cream: #f9f6f2;
+      /* warm off-white bg    */
+      --line-color: #e5ddd4;
+      /* ruled line color     */
+      --muted: #9b8e82;
+      /* footer / sub-text    */
+    }
+
+    /* ──────────────────────────────────────────────
+       Screen preview wrapper
+    ────────────────────────────────────────────── */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e8e1d9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+      gap: 32px;
+    }
+
+    .preview-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: -16px;
+    }
+
+    /* ──────────────────────────────────────────────
+       A4 Page
+       A4 = 210 × 297 mm  →  794 × 1123 px @ 96 dpi
+    ────────────────────────────────────────────── */
+    .page {
+      width: 794px;
+      min-height: 1123px;
+      background: var(--cream);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* ── decorative left accent bar ── */
+    .page::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--brand-gold) 0%, var(--brand-dark) 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Force background printing for the whole page */
+    .page {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ──────────────────────────────────────────────
+       HEADER
+    ────────────────────────────────────────────── */
+    .page-header {
+      padding: 36px 48px 24px 54px;
+      /* border-bottom: 2px solid var(--brand-dark); */
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .logo-img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    .tagline {
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      font-weight: 500;
+      margin-left: 2px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 10px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .header-right a {
+      color: var(--brand-gold);
+      text-decoration: none;
+    }
+
+    /* golden accent line under header */
+    .header-accent {
+      height: 3px;
+      background: linear-gradient(90deg, var(--brand-gold) 0%, var(--brand-gold-lt) 50%, transparent 100%);
+      margin-left: 54px;
+      margin-right: 48px;
+      border-radius: 2px;
+      margin-top: -1px;
+    }
+
+
+
+    /* ──────────────────────────────────────────────
+       BODY – plain writing area
+    ────────────────────────────────────────────── */
+    .body-area {
+      flex: 1;
+      margin: 24px 54px 0 54px;
+      position: relative;
+    }
+
+    /* ──────────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────────── */
+    .page-footer {
+      margin-top: 32px;
+      border-top: 1.5px solid var(--line-color);
+      padding: 14px 54px 24px 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo-text span {
+      color: var(--brand-gold);
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--line-color);
+    }
+
+    .footer-tagline {
+      font-size: 9.5px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 9px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer-right a {
+      color: var(--brand-gold);
+      text-decoration: none;
+    }
+
+
+
+    /* ──────────────────────────────────────────────
+       PRINT STYLES
+    ────────────────────────────────────────────── */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        display: block;
+      }
+
+      .preview-label,
+      .print-btn {
+        display: none !important;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        box-shadow: none;
+        page-break-after: always;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page::before {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="preview-label">Screen Preview – A4 Letterpad</p>
+
+  <!-- ════════════════════════════════════════
+       PAGE 1
+  ════════════════════════════════════════ -->
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <div class="header-left">
+        <img src="/logo.png" alt="techKoodaram" class="logo-img" />
+        <span class="tagline">Learn · Build · Grow</span>
+      </div>
+      <div class="header-right">
+        techkoodaram.in<br />
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </header>
+
+    <div class="header-accent"></div>
+
+
+
+    <!-- PLAIN WRITING AREA -->
+    <div class="body-area"></div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span class="footer-logo-text">&lt;tech<span>K</span>oodaram /&gt;</span>
+        <div class="footer-divider"></div>
+        <span class="footer-tagline">#1 South TN Tech Community</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://techkoodaram.in">techkoodaram.in</a><br />
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </footer>
+
+
+
+  </div><!-- /page -->
+
+  <!-- Print Button (hidden on print) -->
+  <button class="print-btn" onclick="window.print()" style="
+    font-family:'Roboto',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    background:#9a6f2e;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:12px 32px;
+    cursor:pointer;
+    box-shadow:0 4px 18px rgba(154,111,46,0.35);
+    transition:background 0.2s;
+  " onmouseover="this.style.background='#7a5820'" onmouseout="this.style.background='#9a6f2e'">
+    🖨️ &nbsp;Print / Save as PDF
+  </button>
+
+</body>
+
+</html>

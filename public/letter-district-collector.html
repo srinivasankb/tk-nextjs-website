@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>techKoodaram – Letter to District Collector, Virudhunagar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --brand-dark: #252220;
+      --brand-gold: #9a6f2e;
+      --brand-gold-lt: #c49040;
+      --cream: #f9f6f2;
+      --line-color: #e5ddd4;
+      --muted: #9b8e82;
+      --body-text: #2e2a26;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e8e1d9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+      gap: 32px;
+    }
+
+    .preview-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: -16px;
+    }
+
+    /* A4 Page */
+    .page {
+      width: 794px;
+      min-height: 1123px;
+      background: var(--cream);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Left accent bar */
+    .page::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--brand-gold) 0%, var(--brand-dark) 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Header */
+    .page-header {
+      padding: 28px 48px 18px 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .logo-img {
+      height: 26px;
+      width: auto;
+      display: block;
+    }
+
+    .tagline {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      font-weight: 500;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 9px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .header-right a {
+      color: var(--brand-gold);
+      text-decoration: none;
+    }
+
+    .header-accent {
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand-gold) 0%, var(--brand-gold-lt) 50%, transparent 100%);
+      margin: 0 48px 0 54px;
+      border-radius: 2px;
+    }
+
+    /* Letter content */
+    .letter-body {
+      flex: 1;
+      padding: 20px 52px 16px 58px;
+      font-size: 11.5px;
+      line-height: 1.8;
+      color: var(--body-text);
+    }
+
+    .letter-date {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .letter-to {
+      font-size: 11.5px;
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+
+    .letter-to strong {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      display: block;
+    }
+
+    .subject-line {
+      padding: 7px 12px;
+      border-left: 3px solid var(--brand-gold);
+      background: rgba(154, 111, 46, 0.06);
+      font-size: 11.5px;
+      margin-bottom: 14px;
+    }
+
+    .subject-line strong {
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+
+    .salutation {
+      margin-bottom: 12px;
+      font-size: 11.5px;
+    }
+
+    p {
+      margin: 0 0 9px;
+      font-size: 11.5px;
+      line-height: 1.8;
+    }
+
+    h3 {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 14px 0 5px;
+      letter-spacing: 0.01em;
+    }
+
+    h3::before {
+      content: '▸ ';
+      color: var(--brand-gold);
+      font-size: 10px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line-color);
+      margin: 14px 0;
+    }
+
+    ul {
+      margin: 4px 0 9px 14px;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 11.5px;
+      line-height: 1.8;
+      margin-bottom: 1px;
+    }
+
+    /* Session stats row */
+    .stats-row {
+      display: flex;
+      gap: 0;
+      margin: 8px 0 10px;
+      border: 1px solid var(--line-color);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 8px 6px;
+      border-right: 1px solid var(--line-color);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--brand-gold);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 8.5px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Signature */
+    .sign-block {
+      margin-top: 20px;
+    }
+
+    .sign-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+
+    .sign-sub {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    /* Footer */
+    .page-footer {
+      border-top: 1.5px solid var(--line-color);
+      padding: 10px 48px 16px 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-text {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo-text span {
+      color: var(--brand-gold);
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--line-color);
+    }
+
+    .footer-tagline {
+      font-size: 8.5px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-right {
+      text-align: right;
+      font-size: 8.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .footer-right a {
+      color: var(--brand-gold);
+      text-decoration: none;
+    }
+
+    /* Print */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+
+      .preview-label,
+      .print-btn {
+        display: none !important;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        box-shadow: none;
+        page-break-after: always;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page::before {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="preview-label">Screen Preview – 2-Page Letter | A4</p>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+
+    <header class="page-header">
+      <div class="header-left">
+        <img src="/logo.png" alt="techKoodaram" class="logo-img" />
+        <span class="tagline">Learn · Build · Grow</span>
+      </div>
+      <div class="header-right">
+        techkoodaram.in &nbsp;·&nbsp;
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </header>
+
+    <div class="header-accent"></div>
+
+    <div class="letter-body">
+
+      <div class="letter-date">21 June 2025</div>
+
+      <div class="letter-to">
+        <strong>Thiru. District Collector</strong>
+        Office of the District Collector,<br />
+        Virudhunagar District, Tamil Nadu – 626 001.
+      </div>
+
+      <div class="subject-line">
+        <strong>Sub:</strong> Introduction of techKoodaram – A Volunteer Technology Community from Southern Tamil Nadu.
+      </div>
+
+      <div class="salutation">Respected Sir,</div>
+
+      <p>
+        We write to introduce techKoodaram, a volunteer-driven technology community based in Southern Tamil Nadu.
+        We are a group of working professionals, students, and educators who come together to learn, share knowledge,
+        and build things — with the belief that technology should be useful and accessible to everyone.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>About techKoodaram</h3>
+      <p>
+        techKoodaram was started with a simple idea: bring together people who are curious about technology
+        and give them a space to learn and contribute. Our community has grown to over 600 members across Tamil Nadu,
+        with a strong presence in Southern districts.
+      </p>
+      <p>
+        We are not a company or a paid platform. Every session, every program, and every mentorship connection
+        we facilitate is voluntary and free of charge.
+      </p>
+
+      <h3>Vision</h3>
+      <p>
+        To build an inclusive technology community where every student, educator, and citizen in Southern Tamil Nadu
+        can learn, grow, and contribute — regardless of where they are from.
+      </p>
+
+      <h3>Mission</h3>
+      <ul>
+        <li>Make technology awareness practical and accessible — not just theoretical.</li>
+        <li>Connect students with professionals for real mentorship and career guidance.</li>
+        <li>Encourage people to build things — products, projects, and solutions — together.</li>
+        <li>Support Tamil language participation in the AI and tech ecosystem.</li>
+        <li>Bring communities together to solve local problems through technology.</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h3>What We Do</h3>
+      <p>
+        We run regular community sessions — offline and online — open to anyone interested in technology.
+        So far, we have completed <strong>14 sessions</strong>, engaged with <strong>3 colleges</strong>,
+        and built a community of <strong>600+ members</strong> across Tamil Nadu.
+      </p>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-num">14</span>
+          <span class="stat-label">Sessions Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Colleges Engaged</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">600+</span>
+          <span class="stat-label">Community Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1000+</span>
+          <span class="stat-label">LinkedIn Followers</span>
+        </div>
+      </div>
+
+      <p>Our sessions run in four formats:</p>
+      <ul>
+        <li><strong>Tech Talk</strong> — latest trends in technology, followed by open discussion and networking.</li>
+        <li><strong>Builder Session</strong> — community members come together to build a software product as a group.</li>
+        <li><strong>Product Showcase</strong> — individuals and teams pitch their side project ideas to the community.</li>
+        <li><strong>Meet Your Co-Founder</strong> — founders share their startup ideas and invite interested members to join them.</li>
+      </ul>
+
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span class="footer-logo-text">&lt;tech<span>K</span>oodaram /&gt;</span>
+        <div class="footer-divider"></div>
+        <span class="footer-tagline">Building Communities Through Technology</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://techkoodaram.in">techkoodaram.in</a> &nbsp;·&nbsp;
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </footer>
+
+  </div><!-- /page 1 -->
+
+
+  <!-- PAGE 2 -->
+  <div class="page">
+
+    <header class="page-header">
+      <div class="header-left">
+        <img src="/logo.png" alt="techKoodaram" class="logo-img" />
+        <span class="tagline">Learn · Build · Grow</span>
+      </div>
+      <div class="header-right">
+        techkoodaram.in &nbsp;·&nbsp;
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </header>
+
+    <div class="header-accent"></div>
+
+    <div class="letter-body">
+
+      <h3>How techKoodaram Can Help Virudhunagar District</h3>
+      <p>
+        Virudhunagar has colleges, students, and a motivated young population. What many of them lack is access to
+        practical technology exposure, mentorship, and a community that encourages them to build and innovate.
+        techKoodaram can help fill that gap — as a volunteer community, at no cost.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Technology and AI Awareness Sessions</strong> — We can conduct sessions in colleges and schools
+          to help students and teachers understand AI and emerging technologies in a practical, hands-on way.
+        </li>
+        <li>
+          <strong>Student Mentorship and Career Guidance</strong> — Our members are working professionals who are
+          willing to guide students on careers in technology, help them build skills, and connect them to
+          real opportunities.
+        </li>
+        <li>
+          <strong>Tamil and AI</strong> — We encourage Tamil speakers to participate in the AI ecosystem and
+          create awareness about how AI can be used in the Tamil language context.
+        </li>
+        <li>
+          <strong>Community Innovation</strong> — We can organise collaborative sessions where students and
+          professionals work together on local problem statements — encouraging innovation rooted in real needs.
+        </li>
+        <li>
+          <strong>Volunteer Technology Network</strong> — Our members are willing to contribute their time and
+          skills to any district program where technology awareness or digital participation can add value.
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h3>Immediate Opportunities for Collaboration</h3>
+      <ul>
+        <li>Facilitate introduction to interested government schools and colleges in the district.</li>
+        <li>Identify district programs where technology volunteers can meaningfully contribute.</li>
+        <li>Enable periodic engagement with educational institutions under district administration.</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h3>Our Long-Term Vision for Virudhunagar</h3>
+      <p>
+        Our long-term vision is to help position Virudhunagar District as a model district for technology
+        awareness, student innovation, and responsible AI adoption.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        We sincerely thank the District Collector for taking the time to read this letter.
+        We would be happy to meet and share more about our work whenever convenient.
+      </p>
+
+      <p>Yours sincerely,</p>
+
+      <div class="sign-block">
+        <div class="sign-name">techKoodaram</div>
+        <div class="sign-sub">Building Communities Through Technology</div>
+        <div class="sign-sub" style="margin-top:3px;">
+          <a href="mailto:contact@techkoodaram.in"
+            style="color:var(--brand-gold);text-decoration:none;">contact@techkoodaram.in</a>
+          &nbsp;·&nbsp; techkoodaram.in
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="page-footer">
+      <div class="footer-brand">
+        <span class="footer-logo-text">&lt;tech<span>K</span>oodaram /&gt;</span>
+        <div class="footer-divider"></div>
+        <span class="footer-tagline">Building Communities Through Technology</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://techkoodaram.in">techkoodaram.in</a> &nbsp;·&nbsp;
+        <a href="mailto:contact@techkoodaram.in">contact@techkoodaram.in</a>
+      </div>
+    </footer>
+
+  </div><!-- /page 2 -->
+
+  <!-- Print Button -->
+  <button class="print-btn" onclick="window.print()" style="
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    background: #9a6f2e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(154,111,46,0.35);
+    transition: background 0.2s;
+  " onmouseover="this.style.background='#7a5820'" onmouseout="this.style.background='#9a6f2e'">
+    🖨️ &nbsp;Print / Save as PDF
+  </button>
+
+</body>
+
+</html>
